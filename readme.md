@@ -18,5 +18,5 @@ For Example: C:\Dev\terminal\
 
 Run the ps1 in an elevated prompt.
 
-
+Optionally, pin the provided shortcuts to start or taskbar.
 
