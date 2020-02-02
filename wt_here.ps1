@@ -5,7 +5,7 @@ class WTInfo{
     [string]$regKeyName
 }
 
-$wtPath = "C:\Dev\terminal\src\cascadia\CascadiaPackage\bin\x64\Release\AppX\WindowsTerminal.exe"
+$wtPath = "$($env:WinTerm_Dev)src\cascadia\CascadiaPackage\bin\x64\Release\AppX\WindowsTerminal.exe"
 
 $wtShortcuts = @(
     [WTInfo]@{
