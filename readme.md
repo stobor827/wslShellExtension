@@ -1,6 +1,6 @@
 # wslShellExtension
 
-![sample screenshot of right click menu with this shell extension setup][sample.png]
+![sample screenshot of right click menu with this shell extension setup][/sample.png]
 
 As of January 27 2020, the windows terminal project (https://github.com/microsoft/terminal) supports cmdline options for launching with a specific profile or working dir.<br>
 
