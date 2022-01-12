@@ -5,7 +5,7 @@ class WTInfo{
     [string]$regKeyName
 }
 
-$wtPath = "$($env:WinTerm_Dev)src\cascadia\CascadiaPackage\bin\x64\Release\AppX\WindowsTerminal.exe"
+$wtPath = "wt.exe"
 
 $wtShortcuts = @(
     [WTInfo]@{
@@ -39,7 +39,9 @@ foreach($key in $locations){
         #One of my prior scripts had this, but I don't know what it does.
         #Set-ItemProperty -Path "$($key)$($elem.regKeyName)" -Name "Extended" -Value "-"
         
-        $cmd = "$($wtPath) -d `"%V`" -p `"$($elem.wtProfile)`""
+		# %V\. is a workaround for bug.  see this comment: 
+		# https://github.com/microsoft/terminal/issues/4571#issuecomment-586026235
+        $cmd = "$($wtPath) -d `"%V\.`" -p `"$($elem.wtProfile)`""
         New-Item -Path "$($key)$($elem.regKeyName)" -Name "command" -Force | Out-Null
         Set-ItemProperty -Path "$($key)$($elem.regKeyName)\command" -Name "(Default)" -Value $cmd
 
